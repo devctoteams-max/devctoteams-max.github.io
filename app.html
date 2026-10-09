@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Devcto Studio app</title><meta name="description" content="A desktop app for creators to review and post their own videos to TikTok.">
+<link rel="stylesheet" href="style.css"><link rel="icon" href="icon.png"></head>
+<body>
+<header class="site-head"><div class="wrap"><a class="logo" href="index.html"><img src="icon.png" alt="">Devcto Studio</a>
+<nav><a href="index.html">Home</a><a href="videos.html">Videos</a><a href="app.html" class=on>The App</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></div></header>
+<main><div class="wrap">
+
+<h1>The Devcto Studio app</h1>
+<p class="lead">Devcto Studio is a desktop app for creators. It lets a creator log in with TikTok, review a finished
+video and post it to their own TikTok account through TikTok's official Content Posting API.</p>
+<img class="shot" src="img/app-posting-screen.jpg" alt="The Devcto Studio posting screen: a list of the creator's videos with a preview on the left, and caption, privacy, interaction and disclosure settings on the right">
+
+<h2>How it works</h2>
+<ol class="steps">
+<li><b>Log in with TikTok.</b> The creator clicks <em>Continue with TikTok</em> and approves the app on TikTok's own
+login page. The app never sees the creator's TikTok password.</li>
+<li><b>Choose a video.</b> The creator picks one of their finished videos and plays the preview.</li>
+<li><b>Review the post.</b> The creator edits the caption and chooses who can view the video. There is no default:
+the creator must choose. They also choose whether others may comment, duet or stitch (options the creator has turned
+off in TikTok are shown as unavailable).</li>
+<li><b>Disclose.</b> The creator can label the video as AI-generated and disclose promotional or branded content.
+Branded content cannot be set to private, as TikTok requires.</li>
+<li><b>Post.</b> Nothing is posted until the creator presses <em>Post</em> and agrees to TikTok's Music Usage
+Confirmation (and Branded Content Policy when it applies). The app uploads the video and shows TikTok's processing
+status until it is published.</li>
+</ol>
+
+<h2>What the app uses from TikTok</h2>
+<table>
+<tr><th>Product / permission</th><th>Why the app needs it</th></tr>
+<tr><td>Login Kit (Desktop) · <code>user.info.basic</code></td><td>Show the creator's display name and avatar on the
+posting screen, so they always know which account they are posting to.</td></tr>
+<tr><td>Content Posting API · <code>video.publish</code></td><td>Post the video to the creator's own profile with the
+caption, privacy, interaction and disclosure settings they chose.</td></tr>
+<tr><td>Content Posting API · <code>video.upload</code></td><td>Optional: send the video to the creator's TikTok inbox
+as a draft, to finish and post in the TikTok app.</td></tr>
+</table>
+<p>The app does not read the creator's other videos, followers, messages or statistics.</p>
+
+<h2>Privacy by design</h2>
+<ul>
+<li>The app runs on the creator's own computer. There is no Devcto Studio server and no account to create.</li>
+<li>TikTok login tokens are stored only on that computer and are sent only to TikTok.</li>
+<li>No analytics, advertising or tracking is built in.</li>
+<li>The creator can revoke access at any time in TikTok's settings.</li>
+</ul>
+<p>Full details: <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a>.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>Does the app post anything automatically?</h3>
+<p>No. Every TikTok post is reviewed on the posting screen and only published when the creator presses Post.</p>
+<h3>Which videos can I post?</h3>
+<p>Only videos you own or have the rights to. Videos must meet TikTok's requirements (for example MP4, 3 seconds up to
+your account's maximum length).</p>
+<h3>How do I disconnect the app?</h3>
+<p>Click <em>Log out</em> in the app, and remove Devcto Studio in TikTok under <em>Settings and privacy → Security and
+permissions → Apps and services permissions</em>.</p>
+<h3>Who do I contact for help?</h3>
+<p>Email <a href="mailto:devcto.teams@gmail.com">devcto.teams@gmail.com</a>.</p>
+
+</div></main>
+<footer><div class="wrap">
+<div>© 2026 Devcto Studio · Short educational videos about history and the stories behind today's news.<br>
+Contact: <a href="mailto:devcto.teams@gmail.com">devcto.teams@gmail.com</a></div>
+<div><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="https://www.instagram.com/devcto.teams/">Instagram</a></div>
+</div></footer>
+</body></html>
