@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Devcto Studio app</title><meta name="description" content="A desktop app for creators to review and post their own videos to TikTok.">
+<title>The Devcto Studio app</title><meta name="description" content="A desktop app for creators to review and upload their own videos to TikTok and YouTube.">
 <link rel="stylesheet" href="style.css"><link rel="icon" href="icon.png"></head>
 <body>
 <header class="site-head"><div class="wrap"><a class="logo" href="index.html"><img src="icon.png" alt="">Devcto Studio</a>
@@ -8,8 +8,9 @@
 <main><div class="wrap">
 
 <h1>The Devcto Studio app</h1>
-<p class="lead">Devcto Studio is a desktop app for creators. It lets a creator log in with TikTok, review a finished
-video and post it to their own TikTok account through TikTok's official Content Posting API.</p>
+<p class="lead">Devcto Studio is a desktop app for creators. It lets a creator sign in with TikTok or Google, review a
+finished video and upload it to their own TikTok account (Content Posting API) or their own YouTube channel (YouTube
+API Services).</p>
 <img class="shot" src="img/app-posting-screen.jpg" alt="The Devcto Studio posting screen: a list of the creator's videos with a preview on the left, and caption, privacy, interaction and disclosure settings on the right">
 
 <h2>How it works</h2>
@@ -39,24 +40,50 @@ as a draft, to finish and post in the TikTok app.</td></tr>
 </table>
 <p>The app does not read the creator's other videos, followers, messages or statistics.</p>
 
+<h2>YouTube uploads</h2>
+<p>The App uses <b>YouTube API Services</b> to upload a creator's own videos to their own YouTube channel as Shorts.</p>
+<ol class="steps">
+<li><b>Sign in with Google.</b> On first use the App opens Google's own sign-in page, where the creator approves two
+permissions. The App never sees the Google password.</li>
+<li><b>Confirm the channel and video.</b> Before every upload the App shows the channel it will upload to, the video
+file, its title, description, tags and privacy setting (public, unlisted or private), and asks for confirmation.
+A creator who publishes on a fixed schedule can choose to pre-approve uploads for their own channel; the App then
+uploads the videos they prepared at the times they set.</li>
+<li><b>Upload.</b> The App uploads the video with the creator's settings, marks whether it is made for kids, and sets
+YouTube's "altered or synthetic content" disclosure for videos with AI-generated visuals or voices. It then shows the
+video's link.</li>
+</ol>
+<table>
+<tr><th>Google permission</th><th>Why the app needs it</th></tr>
+<tr><td><code>youtube.upload</code></td><td>Upload the video the creator chose to their own channel.</td></tr>
+<tr><td><code>youtube.readonly</code></td><td>Read the channel's title and ID, to show which channel the video will go to
+before the creator confirms.</td></tr>
+</table>
+<p>By using the App's YouTube features you agree to the <a href="https://www.youtube.com/t/terms">YouTube Terms of
+Service</a>; see also the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. You can revoke the
+App's access at any time on <a href="https://myaccount.google.com/permissions">Google's security settings page</a>.</p>
+
 <h2>Privacy by design</h2>
 <ul>
 <li>The app runs on the creator's own computer. There is no Devcto Studio server and no account to create.</li>
-<li>TikTok login tokens are stored only on that computer and are sent only to TikTok.</li>
+<li>TikTok and Google login tokens are stored only on that computer and are sent only to TikTok or Google.</li>
 <li>No analytics, advertising or tracking is built in.</li>
-<li>The creator can revoke access at any time in TikTok's settings.</li>
+<li>The creator can revoke access at any time in TikTok's settings or on Google's security settings page.</li>
 </ul>
 <p>Full details: <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a>.</p>
 
 <h2>Frequently asked questions</h2>
 <h3>Does the app post anything automatically?</h3>
-<p>No. Every TikTok post is reviewed on the posting screen and only published when the creator presses Post.</p>
+<p>On TikTok, no: every post is reviewed on the posting screen and only published when the creator presses Post.
+On YouTube, uploads are confirmed one by one by default; a creator can choose to pre-approve scheduled uploads of
+their own prepared videos to their own channel, and can stop this at any time.</p>
 <h3>Which videos can I post?</h3>
 <p>Only videos you own or have the rights to. Videos must meet TikTok's requirements (for example MP4, 3 seconds up to
 your account's maximum length).</p>
 <h3>How do I disconnect the app?</h3>
-<p>Click <em>Log out</em> in the app, and remove Devcto Studio in TikTok under <em>Settings and privacy → Security and
-permissions → Apps and services permissions</em>.</p>
+<p>For TikTok, click <em>Log out</em> in the app and remove Devcto Studio in TikTok under <em>Settings and privacy →
+Security and permissions → Apps and services permissions</em>. For YouTube, remove Devcto Studio on
+<a href="https://myaccount.google.com/permissions">Google's security settings page</a>.</p>
 <h3>Who do I contact for help?</h3>
 <p>Email <a href="mailto:devcto.teams@gmail.com">devcto.teams@gmail.com</a>.</p>
 
